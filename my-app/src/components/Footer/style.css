@@ -1,0 +1,13 @@
+footer.page-footer {
+
+  font-size: 18px;
+  border-radius: 2px;
+  border: solid green 2px;
+  box-shadow: 6px 3px 0px #999, 6px 3px 0px #999;
+  height: 100px;
+}
+
+.bottom {
+    position: relative;
+    bottom: 60px;
+}

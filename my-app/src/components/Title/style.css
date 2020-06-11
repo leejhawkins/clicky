@@ -1,0 +1,11 @@
+.nav-wrapper {
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 50px;
+  padding: 0px 15px;
+  border-radius: 2px;
+  border: solid green 2px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+
