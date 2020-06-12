@@ -8,4 +8,23 @@
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
+@media screen and (max-width: 900px) {
+  .nav-wrapper {
+    font-size: 14px;
+  }
+  a.brand-logo {
+    font-size: 18px;
+  }
+    
+}
+@media screen and (max-width: 600px) {
+  .nav-wrapper {
+    font-size: 10px;
+  }
+  a.brand-logo {
+    font-size: 14px;
+  }
+    
+}
+
 
