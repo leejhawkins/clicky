@@ -27,25 +27,27 @@ class App extends Component {
   }
   return array
 }
-// newCount = (count,chosen) => {
-//   if (chosen.length===0) {
-//     count = 0
-//   } else {
-//     count ++
-//   }
-//   return count
-// }
-newMessage = (chosen, id) => {
+newCount = (count,chosen) => {
+  if (chosen) {
+    count = 0
+  } else {
+    count ++
+  }
+  return count
+}
+newMessage = (matched, count) => {
     let message = ""
-    if ((chosen.findIndex(element => element === id)) === -1) {
-      message = "Correct"
+    if (!matched && count%12===0) {
+      message = "Correct. You cleared the board!"
+    } else if (!matched){
+      message ="Correct. Not a match"
     } else {
       message = "Game Over. Pick a new card"
     }
     return message
 }
-newChosen = (chosen,id) => {
-  if ((chosen.findIndex(element => element ===id))===-1) {
+newChosen = (chosen,id,match,count) => {
+  if (!(match) && !(count%12===0) ) {
     chosen.push(id)
   } else {
     chosen = []
@@ -60,9 +62,11 @@ newHighScore = (score,highScore) => {
 }
 
 chooseCard = id => {
-  const newMessage = this.newMessage(this.state.chosen, id)
-  const newChosen = this.newChosen(this.state.chosen,id)
-  const newCount = newChosen.length
+  const isMatched = (!(this.state.chosen.findIndex(element => element === id) === -1))
+  const newCount = this.newCount(this.state.count,isMatched)
+  const newMessage = this.newMessage(isMatched, newCount)
+  const newChosen = this.newChosen(this.state.chosen,id,isMatched,newCount)
+  
   const newCards = this.shuffledCards(this.state.cards)
   const newHighScore = this.newHighScore(newCount,this.state.highScore)
   this.setState({ cards: newCards, count: newCount, chosen:newChosen , highScore:newHighScore, message: newMessage });
