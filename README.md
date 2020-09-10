@@ -1,7 +1,7 @@
 # What We Do on the Clickies
 
 
-![Screen shot](build/images/screenshot.jpg)
+![Screen shot](public/images/screenshot.jpg)
 
 What We Do on the Clickies is a React web application hosted on Heroku.
 The goal is to click on as many cards as possible without clicking on the same card twice within the same round.
