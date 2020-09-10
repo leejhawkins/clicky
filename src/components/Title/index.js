@@ -13,7 +13,7 @@ function Title(props) {
           <a href="/" class="green-text">What We Do on the Clickies</a>
           <a href="/" class="brand-logo center green-text">{props.message}</a>
           <ul className="right">
-            <li> Number Correct: {props.count} || High Score: {props.highScore}</li>
+            <li> Number Correct: {props.count} == High Score: {props.highScore}</li>
           </ul>
         </div>
       </nav>
